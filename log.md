@@ -17,7 +17,7 @@ func main() {
 	fmt.Println(c.FormalEnv.ApiServer)
 }
 ```
-执行结果。
+执行结果。每个后面的[done]都是vscode控制窗自己的执行返回码，可不关注。
 ```
 // 这个是用的Fatalf，触发后程序执行退出，code为1
 [Running] go run "d:\work\code\go\yuntihandle\cmd\main.go"
