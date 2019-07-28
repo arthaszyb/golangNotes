@@ -11,14 +11,14 @@
 ### json包解析到struct
 根据自己对数据的需要构造结构体，不需要的数据可以不写到结构体中，需要的则严格按照数据层次构造，根据json标注进行匹配。如下示例：
 完整返回数据如下：
-``	
+```	
 {"status":"1",
 "count":"1",
 "info":"OK",
 "infocode":"10000",
 "lives":[{"province":"广东","city":"深圳市","adcode":"440300","weather":"小雨","temperature":"28","winddirection":"东北","windpower":"≤3","humidity":"80","reporttime":"2019-07-28 17:14:14"}]
 }
-``	
+```	
 而我只需要weather和temperature两个值。则构造如下struct：
 ```		
 // GetWeather 获取天气回包结构体	   
@@ -56,5 +56,5 @@ type WeatherDesc struct{
 ### 采用外部包实现[]byte到json转换的处理。
 如github.com/bitly/go-simplejson。使用示例可参见[这里](https://www.cnblogs.com/pluse/p/9157599.html)
 
-##发送数据方法
+## 发送数据方法
 以net/http包中为常用手段。根据服务端要求的入参格式创建对应的结构体。
