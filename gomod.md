@@ -1,4 +1,4 @@
-#Go Module 入门使用
+# Go Module 入门使用
 > module  golang  8.7k 次阅读  ·  读完需要 8 分钟
 对于Go的版本管理主要用过 glide，下面介绍 Go 1.11 之后官方支持的版本管理工具 mod。
 
