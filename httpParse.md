@@ -38,6 +38,7 @@ type WeatherDesc struct{
 	weather = weatherStruBody.Lives[0].Weather  
 	temperature = weatherStruBody.Lives[0].Temperature
 ```
+* 手工垒struct很辛苦？试试工具直接转化吧：https://mholt.github.io/json-to-go/ *
   
 ### 采用断言来层析
 即避免构造结构体。需要构造一个万能结构体(如map[string]interface{})来格式化任何结构的json数据，然后通过对每一层的interface进行断言来确认其数据类型并获取其中数据。  
@@ -51,7 +52,7 @@ type WeatherDesc struct{
 	}  
 	return InstanceID  
   ```
-  这种方法实际并不会更简单，一层层断言本身就不简单同时适应性也差，一旦断言失败，则直接panic。不建议生产环境使用。
+  这种方法看起来是灵活的，但实际并不会更简单，一层层断言本身就不简单同时适应性也差，一旦断言失败，则直接panic。不建议生产环境使用，一般可对要解析的数据接口不不清楚时可应用。
   
 ### 采用外部包实现[]byte到json转换的处理。
 如github.com/bitly/go-simplejson。使用示例可参见[这里](https://www.cnblogs.com/pluse/p/9157599.html)
